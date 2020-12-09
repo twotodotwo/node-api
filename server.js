@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const require_dir = require('require-dir'); 
+require('dotenv/config');
 
 // Iniciando o App
 const app = express();
@@ -14,7 +15,7 @@ app.use(cors());
 
 // Iniciando o DB
 mongoose.connect(
-    MONGO_URL, 
+    process.env.MONGO_URL, 
     {useNewUrlParser: true, useUnifiedTopology: true}
 );
 
